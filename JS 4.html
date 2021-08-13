@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+        <h1 style="text-align: center;"> JS Recursive Function </h1>
+        <h1 style="text-align: center;"> SARMAD NOMAN </h1>
+        <input type="number" id="enterNames" name="">
+        <button onclick="listManage()" > Add Items in List </button>
+        <button onclick="removeItem()">Remove</button>
+        <ul id="thelist" style="list-style-type: none;">  
+        </ul>
+        
+        
+        <script>   
+            function removeItem (){
+                var completelist= document.getElementById("thelist");
+                completelist.removeChild(completelist.childNodes[0]);
+            }
+            function listManage (){
+                 var a = document.getElementById("enterNames").value;
+                 additems(a);
+            }
+            function additems (counter){
+                if(counter == 0) {
+                     return 0;
+                }
+                else {
+                     var completelist= document.getElementById("thelist");
+                     var names = prompt("Enter Value in List");
+                     completelist.innerHTML += "<li> " + names + "</li>";
+                }
+             return additems(counter-1);
+            }   
+        </script>
+</body>
+</html>
